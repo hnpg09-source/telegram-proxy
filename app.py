@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, redirect
 import requests
 import os
 
@@ -17,8 +17,8 @@ def send():
 
 @app.route('/')
 def index():
-    return "Proxy activo"
+    return "OK"
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
